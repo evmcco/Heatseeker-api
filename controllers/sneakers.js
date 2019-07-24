@@ -12,6 +12,6 @@ exports.raffles_by_sneaker_get = async (req, res) => {
       }
     }
   }
-  console.log("raffles_by_sneaker_get", sneakersList);
+  // console.log("raffles_by_sneaker_get", sneakersList);
   return sneakersList;
 };
