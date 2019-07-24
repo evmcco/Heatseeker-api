@@ -2,7 +2,8 @@ create table sneakers
 (
   sneaker_id serial primary key,
   sneaker_name text,
-  image_url text
+  image_url text,
+  price int
 );
 
 create table stores
