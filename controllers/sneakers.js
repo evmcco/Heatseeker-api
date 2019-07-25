@@ -1,7 +1,7 @@
 const Raffles = require("../models/raffles"),
   Sneakers = require("../models/sneakers");
 
-const { format } = require("date-fns");
+const { format, distanceInWordsToNow, isFuture, isPast } = require("date-fns");
 
 exports.raffles_by_sneaker_get = async (req, res) => {
   const sneakersList = await Sneakers.getAll();
@@ -14,6 +14,16 @@ exports.raffles_by_sneaker_get = async (req, res) => {
         let cleanEndTime = cleanDate(rafflesList[raffle].end_time);
         rafflesList[raffle].start_time_clean = cleanStartTime;
         rafflesList[raffle].end_time_clean = cleanEndTime;
+        if (isFuture(rafflesList[raffle].start_time)) {
+          rafflesList[raffle].time_until = `Starts in ${distanceInWordsToNow(
+            rafflesList[raffle].start_time
+          )}`;
+        }
+        if (isPast(rafflesList[raffle].start_time)) {
+          rafflesList[raffle].time_until = `Ends in ${distanceInWordsToNow(
+            rafflesList[raffle].end_time
+          )}`;
+        }
         sneakersList[sneaker].raffles.push(rafflesList[raffle]);
       }
     }
