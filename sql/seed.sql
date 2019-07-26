@@ -1,17 +1,17 @@
 insert into sneakers
-  (sneaker_name, image_url)
+  (sneaker_name, price, image_url)
 values
-  ('Yeezy Boost 350 V2 Black Non-Reflective', 'https:
+  ('Yeezy Boost 350 V2 Black Non-Reflective', 300, 'https:
 //images.solecollector.com/images/fl_lossy,q_auto/c_crop,h_617,w_1200,x_0,y_265/xebx2nw1iducqfidh4iv/adidas-yeezy-boost-350-v2-black-fu9006-lateral'),
-  ('Parra x Nike SB Blazer Low', 'https:
+  ('Parra x Nike SB Blazer Low', 85, 'https:
 //www.kicksonfire.com/wp-content/uploads/2019/07/Parra-x-Nike-SB-Blazer-Low-1-681x387.jpg')
 
 insert into stores
-  (store_name, address)
+  (store_name, address, address_lat, address_lon)
 values
-  ('A Ma Maniere', '969 Marietta St NW, Unit 200, Atlanta, GA 30318'),
-  ('Social Status', '280 Elizabeth St. Suite E. Atlanta, GA. 30307'),
-  ('Wish', '447 Moreland Ave, Atlanta, GA 30307')
+  ('A Ma Maniere', '969 Marietta St NW, Unit 200, Atlanta, GA 30318', 33.779205, -84.409366),
+  ('Social Status', '280 Elizabeth St. Suite E. Atlanta, GA. 30307', 33.762526, -84.358137),
+  ('Wish', '447 Moreland Ave, Atlanta, GA 30307', 33.766789, -84.348697)
 
 insert into raffles
   (sneaker_id, store_id, start_time, end_time, post_url, description)

@@ -2,8 +2,8 @@ create table sneakers
 (
   sneaker_id serial primary key,
   sneaker_name text,
+  price numeric,
   image_url text,
-  price int
 );
 
 create table stores
@@ -11,6 +11,8 @@ create table stores
   store_id serial primary key,
   store_name text,
   address text,
+  address_lat numeric,
+  address_long numeric
 );
 
 create table raffles
