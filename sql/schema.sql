@@ -24,4 +24,4 @@ create table raffles
   end_time timestamptz,
   post_url text,
   description text
-);
+)

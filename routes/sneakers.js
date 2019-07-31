@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-const sneakersModel = require("../models/sneakers");
 const sneakersController = require("../controllers/sneakers");
 
 router.get("/all", async (req, res, next) => {
